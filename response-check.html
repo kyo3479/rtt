@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>반응속도</title>
+</head>
+<body>
+    <div id="header">
+        <h1>RTT</h1><p>reaction time test</p>
+        
+    </div>
+    <div id="centerbox">
+        <div id="logobox">
+            <div id="logo">
+                <span id="lol">@</span>kream_pasta
+            </div>
+        </div>
+    </div>
+    
+    <div id="main">
+        <div id="screen" class="waiting">Click to start.
+        </div>
+        <div id="result">Results here</div>
+        <div id="bottom_text_box">
+            <div id="text_here">
+                press f5 to restart<br>
+                so cool
+            </div>
+            <div id="intext"><i class="fa-solid fa-code-branch"></i>v 1.0</div>
+        </div>
+        
+    </div>
+    
+    
+    
+    <script>
+        const $screen = document.querySelector("#screen");
+        const $result = document.querySelector("#result");
+        let startTime;
+        let endTime;
+        let timeoutId;
+        const records =[]
+
+        $screen.addEventListener('click',function(){
+            if($screen.classList.contains('waiting')){
+                $screen.classList.remove('waiting');
+                $screen.classList.add('ready');
+                $screen.textContent = "Click on yello."
+
+                timeoutId = setTimeout(function() {
+                    startTime = new Date();
+                    $screen.classList.remove('ready');
+                    $screen.classList.add('now');
+                    $screen.textContent = 'click!';
+                }, Math.floor(Math.random() * 500) + 3000);
+            }else if($screen.classList.contains('ready')){
+                clearTimeout(timeoutId);
+                $screen.classList.remove('ready');
+                $screen.classList.add("waiting");
+                $screen.textContent = 'Too fast!'
+
+            }else if($screen.classList.contains('now')){
+                endTime = new Date();
+                const current = endTime - startTime;
+                records.push(current);
+                const average = records.reduce((a,c) => a+c) / records.length;
+                $result.textContent = `${current}ms, average: ${average}ms`;
+                startTime = null
+                endTime = null
+                $screen.classList.remove('now')
+                $screen.classList.add('waiting');
+                $screen.textContent  =  "Click to start."
+            }
+        });
+
+    </script>
+    <script src="https://kit.fontawesome.com/343f4c5863.js" crossorigin="anonymous"></script>
+</body>
+</html>

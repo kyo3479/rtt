@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@font-face {
+    font-family: "ppmori";
+    src: url("fonts/PPMori-SemiBold.otf");
+  }
+  @font-face {
+    font-family: "sppmori";
+    src: url("fonts/PPMori-Extralight.otf");
+  }
+
+body,html{
+    height: 100%;
+    font-family: ppmori;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin: 0;
+}
+body{
+    background-color: #343232;
+    color: #646464;
+
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+#result{
+    padding-top: 10px;
+}
+#main{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#screen{
+    
+    display: flex;
+    border-radius: 7px;
+    font-size: 20px;
+    width: 60%;
+    height: 55%;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    
+}
+#header{
+    display: flex;
+    align-items: center;
+    background-color: #ffc746;
+    height: 40px;
+    width: 1920px;
+    color: #343232;
+    position: fixed;
+    
+    
+}
+#header h1{
+    padding-left: 10px;
+    padding-top: 4px;
+}
+#header p{
+    padding-left: 20px;
+    color:#303030 ;
+    font-family: sppmori;
+    text-transform: capitalize;
+    
+}
+#screen.waiting{
+    background-color: #343232;
+    border: 2px solid #646464;
+}
+#screen.ready{
+    background-color: #1d1d1d;
+    border: 2px solid #424242;
+}
+#screen.now{
+    background-color: #ffc746;
+    color:#303030 ;
+    border: 2px solid #bd9740;
+}
+#logobox{
+    position: absolute;
+    padding-top: 50px;
+    color: #F4EEE0;
+    font-size: 20px;
+    margin-top: 10px;
+    display: flex;
+    width: 70%;
+}
+#logobox i{
+    padding-left: 20px;
+    color: #6e6e6e;
+}
+#centerbox{
+    display: flex;
+    justify-content: center;
+}
+#lol{
+    color:#ffc746 ;
+}
+#bottom_text_box{
+    margin-top: 650px;
+    position: absolute;
+    display: flex;
+    font-size: 10px;
+    width: 70%;
+    justify-content: space-between;
+}
+
+
+#text_here{
+    
+    text-transform: capitalize;
+}
